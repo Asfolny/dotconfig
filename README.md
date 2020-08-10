@@ -1,5 +1,5 @@
 # Dotconfig files
-Laptop dotconfig files (flex for the lenovo flex 5 I have)
+Main desktop dotconfig files (flex for the lenovo flex 5 I have)
 
 ### Notes
 * (bare) Arch linux
