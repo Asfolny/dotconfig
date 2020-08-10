@@ -5,4 +5,4 @@ pacman -Qqe \
   | grep -v (pacman -Qqg base-devel | string collect) \
   > ~/pkglist
 
-pacman -Qqm > ~/apkglist
+pacman -Qqm > ~/altpkglist
