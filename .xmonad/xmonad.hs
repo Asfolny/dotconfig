@@ -200,7 +200,7 @@ myManageHook = composeAll . concat $
 -- Layouts
 ---
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
-mySpacing i = spacingRaw True (Border i i i i) True (Border i i i i) True
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
 
 -- Layout Definitions
 tall    = renamed [Replace "Tall"]
