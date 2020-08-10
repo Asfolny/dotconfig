@@ -252,7 +252,8 @@ myLayouts = smartBorders $ avoidStruts $ mouseResize $ windowArrange $ T.toggleL
 ---
 
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar/.xmobarrc"
+  xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc"
+  xmproc1 <- spawnPipe "xmobar -x 1 ~/.xmonad/xmobar/xmobarrc"
   xmonad $ docks def
     { terminal            = myTerminal
     , modMask             = myModMask
@@ -262,7 +263,7 @@ main = do
     , manageHook          = myManageHook
     , layoutHook          = myLayouts
     , logHook             = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
-                                { ppOutput          = hPutStrLn xmproc
+                                { ppOutput          = \x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x
                                 , ppTitle           = xmobarColor "green" "" . shorten 50
                                 , ppCurrent         = xmobarColor "#D9F7F0" "" . wrap "[" "]"
                                 , ppVisible         = xmobarColor "#D5F2EB" ""
