@@ -187,8 +187,8 @@ myManageHook = composeAll . concat $
     , [ isFullscreen           --> doFullFloat ]
     , [ className =? "firefox" --> doShift "www" ]
     , [ className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2)) ]
-    , [ className =? "Lutris"  --> doShift "game" ]
     , [ className =? "Steam"   --> doShift "game" ]
+    , [ className =? "explorer.exe"        --> doHideIgnore ]
     
     -- Jetbrains specific... might need to edit for other intelliJs tho.
     , [ fmap ( c `isInfixOf`) className --> doShift "dev" | c <- devShift ]
