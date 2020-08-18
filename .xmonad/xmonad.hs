@@ -174,7 +174,7 @@ myStartupHook = do
 -- Workspaces
 ---
 myWorkspaces :: [WorkspaceId]
-myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid"]
+myWorkspaces = ["dev", "www", "sys", "irc", "doc", "gam", "vid"]
 
 
 ---
