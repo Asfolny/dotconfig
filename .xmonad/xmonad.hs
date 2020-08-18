@@ -12,9 +12,9 @@ import qualified Data.Map as M
 -- Hooks
 import XMonad.ManageHook
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.SetWMName
 import XMonad.Hooks.Place
 import XMonad.Hooks.WorkspaceHistory
 
@@ -169,7 +169,6 @@ myStartupHook :: X()
 myStartupHook = do
     spawnOnce "~/.fehbg &"
     spawnOnce "picom &"
-    setWMName "LG3D"
 
 ---
 -- Workspaces
@@ -254,13 +253,14 @@ myLayouts = smartBorders $ avoidStruts $ mouseResize $ windowArrange $ T.toggleL
 main = do
   xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc"
   xmproc1 <- spawnPipe "xmobar -x 1 ~/.xmonad/xmobar/xmobarrc"
-  xmonad $ docks def
-    { terminal            = myTerminal
+  xmonad $ ewmh def
+    { manageHook          = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
+    , handleEventHook     = fullscreenEventHook <+> docksEventHook
+    , terminal            = myTerminal
     , modMask             = myModMask
     , borderWidth         = myBorderWidth
     , normalBorderColor   = myNormColor
     , focusedBorderColor  = myFocusColor
-    , manageHook          = myManageHook
     , layoutHook          = myLayouts
     , logHook             = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
                                 { ppOutput          = \x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x
