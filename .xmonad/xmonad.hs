@@ -52,25 +52,25 @@ import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts)
 -- Variables
 ---
 myFont :: String
-myFont        = "xft:JetBrainsMono Nerd Font:size=10"
+myFont = "xft:JetBrainsMono Nerd Font:size=10"
 
 myTerminal :: String
-myTerminal    = "alacritty"
+myTerminal = "alacritty"
 
 myModMask :: KeyMask
-myModMask     = mod4Mask -- Win key
+myModMask = mod4Mask -- Win key
 
 altMask :: KeyMask
-altMask       = mod1Mask -- Used by xprompts for alt
+altMask = mod1Mask -- Used by xprompts for alt
 
 myBorderWidth :: Dimension
 myBorderWidth = 2
 
 myNormColor :: String
-myNormColor   = "#6D7D7A"
+myNormColor = "#6D7D7A"
 
 myFocusColor :: String
-myFocusColor  = "#AEC7C2"
+myFocusColor = "#AEC7C2"
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
