@@ -12,7 +12,7 @@ Config { font        = "xft:JetBrainsMono Nerd Font:pixelsize=12:antialias=true:
                       -- CPU usage number and percent
                     , Run Cpu ["-t", "<total>% \xfb19", "-H", "80", "--high", "red"] 20
                       -- Ram usage
-                    , Run Memory ["-t", "<used>M(<usedratio>%) \xf85a"] 20
+                    , Run Memory ["-t", "<used>M (<usedratio>%) \xf85a"] 20
                       -- Disk space free
                     , Run DiskU [("/", "<free> \xf473"), ("/home", "<free> \xf0a0")] [] 60
                       -- pacman check updates and report a NUMBER
