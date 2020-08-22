@@ -163,8 +163,8 @@ window:
 colors:
   # Default colors
   primary:
-    background: '#131313'
-    foreground: '#DBDBDB'
+    background: '#1F1F2C'
+    foreground: '#C7C9CB'
 
     # Bright and dim foreground colors
     #
@@ -220,15 +220,15 @@ colors:
   #    foreground: CellBackground
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+    black:   '#3F3F4C'
+    red:     '#91A0BD'
+    green:   '#5C6B8B'
+    yellow:  '#ADC6D6'
+    blue:    '#A091BD'
+    magenta: '#6C5C8B'
+    cyan:    '#AFADD6'
+    white:   '#CCCACA'
 
   # Bright colors
   #bright:
@@ -245,15 +245,15 @@ colors:
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
+  dim:
+    black:   '#525263'
+    red:     '#A4ADBD'
+    green:   '#6A748B'
+    yellow:  '#C3CED6'
+    blue:    '#ADA4BD'
+    magenta: '#756A8B'
+    cyan:    '#C4C3D6'
+    white:   '#EDEFF2'
 
   # Indexed Colors
   #

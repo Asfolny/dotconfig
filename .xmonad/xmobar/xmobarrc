@@ -1,6 +1,6 @@
 Config { font        = "xft:JetBrainsMono Nerd Font:pixelsize=12:antialias=true:hinting=true"
-       , bgColor     = "#303030"
-       , fgColor     = "#F2F2F2"
+       , bgColor     = "#1F1F2C"
+       , fgColor     = "#C7C9CB"
        , position    = Top
        , persistent  = True
        , iconRoot    = "./.xmonad/xmobar/xpm" -- default: "."

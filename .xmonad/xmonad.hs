@@ -67,10 +67,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 2
 
 myNormColor :: String
-myNormColor = "#6D7D7A"
+myNormColor = "#C7C9CB"
 
 myFocusColor :: String
-myFocusColor = "#AEC7C2"
+myFocusColor = "#91A0BD"
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
@@ -101,11 +101,11 @@ myXPromptConfig :: XPConfig
 myXPromptConfig =
     def
       { font                = myFont
-      , bgColor             = "#303533"
-      , fgColor             = "#C0C2C1"
-      , bgHLight            = "#444947"
-      , fgHLight            = "#D5D6D6"
-      , borderColor         = myNormColor
+      , bgColor             = "#1F1F2C"
+      , fgColor             = myNormColor
+      , bgHLight            = "#3F3F4C"
+      , fgHLight            = "#CCCACA"
+      , borderColor         = myFocusColor
       , promptBorderWidth   = 0
       , promptKeymap        = myXPKeymap
       , position            = Top
@@ -228,12 +228,12 @@ tabs    = renamed [Replace "Tabs"]
           $ tabbed shrinkText myTabConfig
   where
     myTabConfig = def { fontName            = myFont
-                      , activeColor         = myFocusColor
-                      , inactiveColor       = myNormColor
-                      , activeBorderColor   = "#90B2AB" -- FocusColor darkened by 10%
-                      , inactiveBorderColor = "#55625F" -- NormColor darkened by 10%
-                      , activeTextColor     = "#303533"
-                      , inactiveTextColor   = "#C0C2C1"
+                      , activeColor         = myNormColor
+                      , inactiveColor       = "#525263"
+                      , activeBorderColor   = "#C3CED6"
+                      , inactiveBorderColor = "#6A748B"
+                      , activeTextColor     = "#756A8B"
+                      , inactiveTextColor   = "#ADA4BD"
                       }
 
 myLayouts = smartBorders $ avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
@@ -265,12 +265,12 @@ main = do
     , logHook             = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
                                 { ppOutput          = \x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x
                                 , ppTitle           = xmobarColor "green" "" . shorten 50
-                                , ppCurrent         = xmobarColor "#D9F7F0" "" . wrap "[" "]"
-                                , ppVisible         = xmobarColor "#D5F2EB" ""
-                                , ppHidden          = xmobarColor "#D5F2EB" "" . wrap "*" ""
-                                , ppHiddenNoWindows = xmobarColor "#D5F2EB" ""
+                                , ppCurrent         = xmobarColor myNormColor "" . wrap "[" "]"
+                                , ppVisible         = xmobarColor myNormColor ""
+                                , ppHidden          = xmobarColor myNormColor "" . wrap "*" ""
+                                , ppHiddenNoWindows = xmobarColor myNormColor ""
                                 , ppSep             = "<fc=#666666> | </fc>"
-                                , ppUrgent          = xmobarColor "#921414" "" . wrap "!" "!"
+                                , ppUrgent          = xmobarColor myFocusColor "" . wrap "!" "!"
                                 , ppExtras          = [windowCount]
                                 , ppOrder           = \(ws:l:t:ex) -> [ws,l]++ex++[t]
                                 }
