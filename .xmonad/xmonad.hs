@@ -67,10 +67,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 2
 
 myNormColor :: String
-myNormColor = "#C7C9CB"
+myNormColor = "#91A0BD"
 
 myFocusColor :: String
-myFocusColor = "#91A0BD"
+myFocusColor = "#C7C9CB"
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
