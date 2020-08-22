@@ -13,6 +13,7 @@ dosbox
 dotnet-sdk
 dunst
 efibootmgr
+elasticsearch
 fd
 feh
 fish
@@ -44,10 +45,12 @@ linux-firmware
 lm_sensors
 man-db
 man-pages
+mariadb
 marked
 mpg123
 mpv
 neofetch
+neomutt
 nim
 nimble
 nmap
@@ -58,6 +61,11 @@ ocl-icd
 openal
 os-prober
 php
+php-gd
+php-imagick
+php-intl
+php-redis
+php-xsl
 picom
 psensor
 pulseaudio
