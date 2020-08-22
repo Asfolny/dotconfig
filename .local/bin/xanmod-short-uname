@@ -1,0 +1,2 @@
+#!/usr/bin/env fish
+echo (uname -r | cut -d- -f1,3-) 
