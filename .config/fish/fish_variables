@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:kak
 SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1
 SETUVAR --export __GL_SHADER_DISK_CACHE:true
 SETUVAR --export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP:true

@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+    pma:
+        image: phpmyadmin/phpmyadmin
+        container_name: pma
+        restart: unless-stopped
+        ports:
+            - "8004:80"
+        networks:
+            - pma-network
+        volumes:
+            - type: bind
+              source: "${HOME}/.config/phpmyadmin/config.inc.php"
+              target: "/etc/phpmyadmin/config.inc.php"
+
+            - type: bind
+              source: "${HOME}/.config/phpmyadmin/config.user.inc.php"
+              target: "/etc/phpmyadmin/config.user.inc.php"
+
+networks:
+    pma-network:

@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+
+echo "From main database:"
+checkupdates
+
+echo ""
+echo "From AUR:"
+checkupdates-aur

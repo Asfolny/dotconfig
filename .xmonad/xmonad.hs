@@ -3,6 +3,7 @@ import qualified XMonad.StackSet as W
 
 -- Actions
 import XMonad.Actions.MouseResize
+import XMonad.Actions.SpawnOn
 
 -- Data
 import Data.List
@@ -169,12 +170,13 @@ myStartupHook :: X()
 myStartupHook = do
     spawnOnce "~/.fehbg &"
     spawnOnce "picom &"
+    spawnOnOnce "mon" (myTerminal ++ " -e bashtop")
 
 ---
 -- Workspaces
 ---
 myWorkspaces :: [WorkspaceId]
-myWorkspaces = ["dev", "www", "sys", "irc", "doc", "gam", "vid"]
+myWorkspaces = ["dev", "www", "sys", "chat", "mail", "doc", "game", "video", "mon"]
 
 
 ---
@@ -183,12 +185,16 @@ myWorkspaces = ["dev", "www", "sys", "irc", "doc", "gam", "vid"]
 ---
 myManageHook :: ManageHook
 myManageHook = composeAll . concat $
-    [ [ isDialog               --> doCenterFloat ]
+    [ [ manageDocks ]
+    , [ manageSpawn ]
+    , [ isDialog               --> doCenterFloat ]
     , [ isFullscreen           --> doFullFloat ]
     , [ className =? "firefox" --> doShift "www" ]
     , [ className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2)) ]
     , [ className =? "Steam"   --> doShift "game" ]
     , [ className =? "explorer.exe"        --> doHideIgnore ]
+
+    , [ className =? "Gui"     --> doCenterFloat ]
     
     -- Jetbrains specific... might need to edit for other intelliJs tho.
     , [ fmap ( c `isInfixOf`) className --> doShift "dev" | c <- devShift ]
@@ -254,7 +260,7 @@ main = do
   xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc"
   xmproc1 <- spawnPipe "xmobar -x 1 ~/.xmonad/xmobar/xmobarrc"
   xmonad $ ewmh def
-    { manageHook          = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
+    { manageHook          = myManageHook
     , handleEventHook     = fullscreenEventHook <+> docksEventHook
     , terminal            = myTerminal
     , modMask             = myModMask
