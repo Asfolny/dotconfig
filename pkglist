@@ -9,6 +9,8 @@ chromium
 composer
 cups
 discord
+docker
+docker-compose
 dosbox
 dotnet-sdk
 dunst
@@ -51,8 +53,6 @@ mpg123
 mpv
 neofetch
 neomutt
-nim
-nimble
 nmap
 nodejs-lts-erbium
 npm
@@ -72,7 +72,10 @@ pulseaudio
 pulseaudio-alsa
 pulseaudio-equalizer
 qutebrowser
+r
+redis
 rsync
+rtorrent
 samba
 shellcheck
 slock

@@ -6,6 +6,8 @@ lib32-nvidia-utils-beta
 linux-xanmod
 linux-xanmod-headers
 nerd-fonts-jetbrains-mono
+nim-git
+nimble-git
 nordvpn-bin
 nvidia-beta-dkms
 nvidia-utils-beta
@@ -14,6 +16,7 @@ perl-www-aur
 pfetch-git
 phpstorm
 phpstorm-jre
+rider
 ttf-font-icons
 ttf-mplus
 ttf-symbola-free
