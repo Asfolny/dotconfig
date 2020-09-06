@@ -56,3 +56,8 @@ Stripping out the project tree section requires whatever file manager there is t
 * Make the other dotfiles into "desktop dotfiles" or something
 * Configure Dunst
 
+
+# Development
+* Git templates for a magento docker setup
+* Create a TCP port list of ports in use, and for what + check this list regularly to regulate it
+* Compile php 7.3 as a standalone, AUR seems to be unreliable + experience for LFS
