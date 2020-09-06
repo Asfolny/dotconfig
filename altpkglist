@@ -14,6 +14,14 @@ nvidia-utils-beta
 perl-checkupdates-aur
 perl-www-aur
 pfetch-git
+php73
+php73-gd
+php73-igbinary
+php73-imagick
+php73-intl
+php73-redis
+php73-xdebug
+php73-xsl
 phpstorm
 phpstorm-jre
 rider
